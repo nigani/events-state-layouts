@@ -1,0 +1,27 @@
+.toolbar {
+  margin-bottom: 16px;
+}
+
+.button {
+  margin-right: 1px;
+  color: default;
+}
+
+.button-select {
+  margin-right: 1px;
+  background-color: silver;
+}
+
+.container {
+  margin: auto;
+  width: 900px;
+  column-count: 3;
+}
+
+.card {
+  margin-bottom: 16px;
+}
+
+img {
+  width: 290px;
+}
