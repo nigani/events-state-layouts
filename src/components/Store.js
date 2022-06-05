@@ -1,9 +1,6 @@
 import React from 'react';
 
-import ProjectList from './ProjectList.js';
 import IconSwitch from './IconSwitch.js';
-
-import PropTypes from 'prop-types';
 
 const products = [
   {
@@ -53,17 +50,16 @@ class Store extends React.Component {
   };
 
   onSwitch = () =>
-    this.setState((prevState) => {
-      icon: prevState.state.icon == 'view_list' ? 'view_module' : 'view_list';
-      
-    });
+    this.setState(prevState => ({icon: prevState.icon === 'view_list' ? 'view_module' : 'view_list'}));
 
   render() {
-    const { filters, selected, projects } = this.state;
+    const {icon, products} = this.state;
     return (
-      <>
-        <IconSwitch icon={'view_list'} onSwitch={this.onSwitch} />
-      </>
+      <div className="App">
+        <div className="App-header">
+          <IconSwitch icon={icon} onSwitch={this.onSwitch}/>
+        </div>
+      </div>
     );
   }
 }

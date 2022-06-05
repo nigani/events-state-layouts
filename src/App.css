@@ -1,27 +1,30 @@
-.toolbar {
-  margin-bottom: 16px;
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+.App {
+  text-align: center;
 }
 
-.button {
-  margin-right: 1px;
-  color: default;
+.App-header {
+  display: flex;
+  background: ghostwhite;
 }
 
-.button-select {
-  margin-right: 1px;
-  background-color: silver;
+.material-icons {
+  margin: 20px 20px 20px auto;
+  cursor: pointer;
 }
 
-.container {
-  margin: auto;
-  width: 900px;
-  column-count: 3;
+@media (prefers-reduced-motion: no-preference) {
+  .material-icons {
+    animation: material-icons-spin infinite 20s linear;
+  }
 }
 
-.card {
-  margin-bottom: 16px;
-}
-
-img {
-  width: 290px;
+@keyframes material-icons-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

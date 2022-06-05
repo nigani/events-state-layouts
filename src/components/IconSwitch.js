@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import MaterialIcon, {colorPallet} from 'material-icons-react';
-
 function IconSwitch(props) {
-  return <MaterialIcon icon={props.icon} onClick={props.onSwitch} />
+  const {icon, onSwitch} = props;
+  return <i className="material-icons" onClick={onSwitch}>{icon}</i>;
+}
+
+IconSwitch.propTypes = {
+  icon: PropTypes.string.isRequired,
+  onSwitch: PropTypes.func.isRequired,
 }
 
 export default IconSwitch;
