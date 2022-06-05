@@ -1,6 +1,6 @@
 import React from 'react';
-
 import IconSwitch from './IconSwitch.js';
+import CardsView from './CardsView.js';
 
 const products = [
   {
@@ -41,7 +41,7 @@ const products = [
   },
 ];
 
-class Store extends React.Component {
+export default class Store extends React.Component {
   static propTypes = {};
 
   state = {
@@ -59,9 +59,10 @@ class Store extends React.Component {
         <div className="App-header">
           <IconSwitch icon={icon} onSwitch={this.onSwitch}/>
         </div>
+        <div>
+          <CardsView cards={products}/>
+        </div>
       </div>
     );
   }
 }
-
-export default Store;
