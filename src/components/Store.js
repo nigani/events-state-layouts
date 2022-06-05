@@ -47,7 +47,6 @@ export default class Store extends React.Component {
 
   state = {
     icon: 'view_list',
-    icon: 'view_module',
     products: products,
   };
 
@@ -64,8 +63,11 @@ export default class Store extends React.Component {
           <IconSwitch icon={icon} onSwitch={this.onSwitch} />
         </div>
         <div>
-          {icon === 'view_list' ? <CardsView cards={products} /> : <ListView items={products} />
-          }
+          {icon === 'view_list' ? (
+            <CardsView cards={products} />
+          ) : (
+            <ListView items={products} />
+          )}
         </div>
       </div>
     );
