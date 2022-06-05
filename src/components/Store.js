@@ -1,6 +1,7 @@
 import React from 'react';
 import IconSwitch from './IconSwitch.js';
 import CardsView from './CardsView.js';
+import ListView from './ListView.js';
 
 const products = [
   {
@@ -46,21 +47,25 @@ export default class Store extends React.Component {
 
   state = {
     icon: 'view_list',
+    icon: 'view_module',
     products: products,
   };
 
   onSwitch = () =>
-    this.setState(prevState => ({icon: prevState.icon === 'view_list' ? 'view_module' : 'view_list'}));
+    this.setState((prevState) => ({
+      icon: prevState.icon === 'view_list' ? 'view_module' : 'view_list',
+    }));
 
   render() {
-    const {icon, products} = this.state;
+    const { icon, products } = this.state;
     return (
       <div className="App">
         <div className="App-header">
-          <IconSwitch icon={icon} onSwitch={this.onSwitch}/>
+          <IconSwitch icon={icon} onSwitch={this.onSwitch} />
         </div>
         <div>
-          <CardsView cards={products}/>
+          {icon === 'view_list' ? <CardsView cards={products} /> : <ListView items={products} />
+          }
         </div>
       </div>
     );

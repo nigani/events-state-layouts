@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ShopItem from './ShopItem.js';
+import ShopCard from './ShopCard.js';
 import { nanoid } from 'nanoid';
 
 export default function CardsView(props) {
@@ -8,7 +8,7 @@ export default function CardsView(props) {
   return (
     <div className="container">
       {cards.map((card) => (
-        <ShopItem card={card} key={nanoid()}/>
+        <ShopCard card={card} key={nanoid()}/>
       ))}
     </div>
   );
